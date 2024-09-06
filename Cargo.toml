@@ -2,5 +2,8 @@
 name = "sniffer-rs"
 version = "1.0.0"
 edition = "2021"
+license = "MIT"
+description = "A library that simplifies fuzzy string matching in rust"
+repository = "https://github.com/Whiskers-Apps/sniffer-rs"
 
 [dependencies]
