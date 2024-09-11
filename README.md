@@ -82,6 +82,6 @@ let result = get_sniffer_result("Luxray", "lux");
 # Contributors
 The people that are helping the project with minor or big changes.
 
-<a href="https://github.com/whiskers-apps/sniffer-kt/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=whiskers-apps/sniffer-kt" />
+<a href="https://github.com/whiskers-apps/sniffer-rs/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=whiskers-apps/sniffer-rs" />
 </a>
