@@ -6,8 +6,8 @@ pub fn get_levenshtein_distance(original: impl Into<String>, search: impl Into<S
     let search = search.into();
     let search_chars: Vec<char> = search.chars().collect();
 
-    let original_size = original.len();
-    let search_size = search.len();
+    let original_size = original_chars.len();
+    let search_size = search_chars.len();
 
     let mut distance: Vec<Vec<usize>> = vec![vec![0; search_size + 1]; original_size + 1];
 

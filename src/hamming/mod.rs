@@ -8,7 +8,7 @@ pub fn get_hamming_distance(original: impl Into<String>, search: impl Into<Strin
     let search = search.into();
     let search_chars: Vec<char> = search.chars().collect();
 
-    if original.len() != search.len() {
+    if original_chars.len() != search_chars.len() {
         panic!("Strings must have the same length");
     }
 

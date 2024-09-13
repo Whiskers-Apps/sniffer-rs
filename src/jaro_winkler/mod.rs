@@ -7,8 +7,8 @@ pub fn get_jaro_winkler_distance(original: impl Into<String>, search: impl Into<
     let search = search.into();
     let search_chars: Vec<char> = search.chars().collect();
 
-    let original_size = original.len() as isize;
-    let search_size = search.len() as isize;
+    let original_size = original_chars.len() as isize;
+    let search_size = search_chars.len() as isize;
 
     if original_size == 0 && search_size == 0 {
         return 1.0;
