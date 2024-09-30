@@ -60,17 +60,21 @@ impl Sniffer {
             search.into().to_lowercase()
         };
 
+        let first_word_chars: Vec<char> = first_word.chars().collect();
+        let second_word_chars: Vec<char> = second_word.chars().collect();
+
         let levenshtein_match = if self.do_levenshtein_match {
             get_levenshtein_distance(&first_word, &second_word) <= self.levenshtein_distance
         } else {
             false
         };
 
-        let hamming_match = if self.do_hamming_match && first_word.len() == second_word.len() {
-            get_hamming_distance(&first_word, &second_word) <= self.hamming_distance
-        } else {
-            false
-        };
+        let hamming_match =
+            if self.do_hamming_match && first_word_chars.len() == second_word_chars.len() {
+                get_hamming_distance(&first_word, &second_word) <= self.hamming_distance
+            } else {
+                false
+            };
 
         let jaro_winkler_match = if self.do_jaro_winkler_match {
             get_jaro_winkler_distance(&first_word, &second_word) >= self.jaro_winkler_distance
@@ -106,9 +110,12 @@ impl Sniffer {
             search.into().to_lowercase()
         };
 
+        let first_word_chars: Vec<char> = first_word.chars().collect();
+        let second_word_chars: Vec<char> = second_word.chars().collect();
+
         return SnifferResult {
             levenshtein: get_levenshtein_distance(&first_word, &second_word),
-            hamming: if first_word.len() == second_word.len() {
+            hamming: if first_word_chars.len() == second_word_chars.len() {
                 get_hamming_distance(&first_word, &second_word) as isize
             } else {
                 -1
