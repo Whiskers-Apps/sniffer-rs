@@ -1,6 +1,6 @@
 [package]
 name = "sniffer-rs"
-version = "1.0.2"
+version = "1.0.3"
 edition = "2021"
 license = "MIT"
 description = "A library that simplifies fuzzy string matching in rust"

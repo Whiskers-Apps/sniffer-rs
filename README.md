@@ -15,7 +15,7 @@ cargo add sniffer-rs
 Or add it manually in cargo.toml:
 ```toml
 [dependencies]
-sniffer-rs = "1.0.2"
+sniffer-rs = "1.0.3"
 ```
 
 # Usage

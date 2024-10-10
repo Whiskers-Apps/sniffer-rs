@@ -47,7 +47,7 @@ impl Sniffer {
     }
 
     /// Returns true if any of the algorithms has a match between the strings
-    pub fn matches(self, original: impl Into<String>, search: impl Into<String>) -> bool {
+    pub fn matches(&self, original: impl Into<String>, search: impl Into<String>) -> bool {
         let first_word = if self.case_sensitive {
             original.into()
         } else {
@@ -94,7 +94,7 @@ impl Sniffer {
     /// Get a sniffer result object containing the results of all the matches.
     /// Hamming match returns -1 if the strings are a different size
     pub fn get_sniffer_result(
-        self,
+        &self,
         original: impl Into<String>,
         search: impl Into<String>,
     ) -> SnifferResult {
