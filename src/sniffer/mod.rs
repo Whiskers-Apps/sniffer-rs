@@ -123,7 +123,7 @@ impl Sniffer {
         let first_word_chars: Vec<char> = first_word.chars().collect();
         let second_word_chars: Vec<char> = second_word.chars().collect();
 
-        return SnifferResult {
+        SnifferResult {
             levenshtein: get_levenshtein_distance(&first_word, &second_word),
             hamming: if first_word_chars.len() == second_word_chars.len() {
                 get_hamming_distance(&first_word, &second_word) as isize
@@ -132,7 +132,7 @@ impl Sniffer {
             },
             jaro_winkler: get_jaro_winkler_distance(&first_word, &second_word),
             inner: get_inner_match(&first_word, &second_word),
-        };
+        }
     }
 
     pub fn set_levenshtein_distance(mut self, levenshtein_distance: usize) -> Self {
@@ -167,6 +167,11 @@ impl Sniffer {
 
     pub fn set_do_inner_match(mut self, do_inner_match: bool) -> Self {
         self.do_inner_match = do_inner_match;
+        self
+    }
+
+    pub fn set_do_contain_match(mut self, do_contain_match: bool) -> Self {
+        self.do_contain_match = do_contain_match;
         self
     }
 
