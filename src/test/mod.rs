@@ -3,6 +3,7 @@ use crate::{
     hamming::get_hamming_distance, inner::get_inner_match, jaro_winkler::get_jaro_winkler_distance,
     levenshtein::get_levenshtein_distance, sniffer::Sniffer,
 };
+use crate::contain::get_contain_match;
 
 #[test]
 fn levenshtein() {
@@ -33,11 +34,21 @@ fn inner() {
 }
 
 #[test]
+fn between(){
+    let expected = true;
+    let actual = get_contain_match("youtube", "utu");
+    assert_eq!(actual, expected);
+
+    let expected = true;
+    let actual = get_contain_match("macacos me mordam", "smem");
+    assert_eq!(actual, expected);
+}
+
+#[test]
 fn sniffer() {
     let sniffer = Sniffer::new();
     let expected = true;
     let actual = sniffer.matches("Banana", "banana");
-
     assert_eq!(actual, expected);
 }
 
