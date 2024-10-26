@@ -11,6 +11,7 @@ pub struct SnifferResult {
     pub hamming: isize,
     pub jaro_winkler: f64,
     pub inner: bool,
+    pub contain: bool,
 }
 
 #[derive(Debug, Clone)]
@@ -29,7 +30,7 @@ pub struct Sniffer {
     do_jaro_winkler_match: bool,
     /// Use inner match
     do_inner_match: bool,
-    /// Do contain match
+    /// Use contain match
     do_contain_match: bool,
     /// Do case-sensitive search
     case_sensitive: bool,
@@ -132,6 +133,7 @@ impl Sniffer {
             },
             jaro_winkler: get_jaro_winkler_distance(&first_word, &second_word),
             inner: get_inner_match(&first_word, &second_word),
+            contain: get_contain_match(&first_word, &second_word),
         }
     }
 

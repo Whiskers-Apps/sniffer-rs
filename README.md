@@ -57,8 +57,15 @@ Returns true if the characters are inside the string.
 let matches = get_inner_match("Sprigatito", "agt");
 ```
 
+## Contain Match
+Returns true if the search string is inside the the original. It matches even if it has spaces.
+```rust
+let contains = get_contain_match("youtube", "utu");
+let contains = get_contain_match("macacos me mordam", "smem");
+```
+
 ## Sniffer
-The sniffer match object can be changed in its intialization in case you don't like the default values.
+The sniffer match object can be changed in its initialization in case you don't like the default values.
 
 ```rust
 let sniffer = Sniffer().set_levenshtein_distance(2)
@@ -68,6 +75,7 @@ let sniffer = Sniffer().set_levenshtein_distance(2)
                 .set_jaro_winkler_distance(0.8)
                 .set_do_jaro_winkler_match(true)
                 .set_do_inner_match(true)
+                .set_do_contain_match(false)
                 .set_case_sensitive(false);
 ```
 

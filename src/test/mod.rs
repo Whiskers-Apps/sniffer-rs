@@ -34,7 +34,7 @@ fn inner() {
 }
 
 #[test]
-fn between(){
+fn contain(){
     let expected = true;
     let actual = get_contain_match("youtube", "utu");
     assert_eq!(actual, expected);
@@ -60,4 +60,5 @@ fn sniffer_result(){
     assert_eq!(result.levenshtein, 3);
     assert_eq!(result.jaro_winkler, 0.8833333333333334);
     assert_eq!(result.inner, true);
+    assert_eq!(result.contain, true);
 }
