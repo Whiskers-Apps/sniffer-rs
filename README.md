@@ -1,9 +1,3 @@
-<div align="center">
-
-<img src="./banner.webp">
-
-</div>
-
 # About
 Sniffer is a library for fuzzy matching strings in rust. For example ybe is a match for Youtube. This provides a easy and user friendly way to search for a match without the need for a lot of code.
 
